@@ -1,0 +1,363 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+::-webkit-input-placeholder {
+   color: white;
+}
+@font-face {
+    font-family: cool;
+    src: url(Montserrat-Regular.ttf);
+}
+html{
+    font-size:16px;
+}
+.flex{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    
+}
+.justify-content { 
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+.justify-content-end { 
+    -webkit-box-pack:end;
+    -ms-flex-pack:end;
+    justify-content:flex-end;
+}
+.flex-direction{
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+     flex-direction: column;
+}
+.align-center{
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+     align-items: center;   
+}
+.align-flex-end{
+    -webkit-box-align:end;
+    -ms-flex-align:end;
+    -ms-grid-row-align:
+    flex-end;align-items:
+    flex-end;
+}
+.flex-100{
+    -webkit-box-flex:1;
+    -ms-flex:1 100%;
+    flex:1 100%;
+}
+.flex-none{
+    -webkit-box-flex:0;
+    -ms-flex:none;
+    flex:none;
+}
+.login-container {
+    height: 100%;
+    width:100%;
+    background-color: #3949ab;
+}
+
+.input {
+    height: 10%;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    outline:0;
+    color:white;
+    font-size: 1.2em;
+    padding-left: 8px;
+}
+
+.input-container {
+    margin-bottom: 10%; 
+}
+
+.button {
+    background: none;
+    border: none;
+    border: 2px solid white;
+    height: 6%;
+    min-width: 35%;
+    color: white;
+    border-radius: 7px;
+    outline: 0;
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.login-sub-container {
+    width:50%;
+}
+.heading{
+    font-size:2em;
+    color:white;
+    font-family:cool;
+}
+
+.error-message {
+    font-family: cool;
+    font-size: 0.9em;
+    color: #f08080;
+}
+
+.header {
+    width: 100%;
+    height: 70px;
+    background: #3949ab;
+}
+.heading-left {
+    padding-left: 12px;
+    font-size: 1.5em;
+    font-family: cool;
+    letter-spacing: -1px;
+    color: white;
+}
+
+.heading-right {
+    padding-right: 8px;
+    font-family: cool;
+    letter-spacing: 0px;
+    color: white;
+    font-size: 1.7em;
+}
+
+.box-container {
+    min-height: 85px;
+    padding-top: 14px;
+    border-bottom: 1px solid #a9a9a9;
+}
+
+.message-name {
+    padding-top: 0px;
+    font-family: cool;
+    font-size: 1.1em;
+    letter-spacing: -0.4px
+}
+
+.message-from {
+    padding-top: 0px;
+    font-family: cool;
+    font-style: italic;
+    font-size: 0.78em;
+    color: #a9a9a9;
+}
+
+.message-content {
+    padding-top: 13px;
+    font-family: cool;
+    font-size: 0.9em;
+    letter-spacing: -0.9px;
+    color: #464545;
+    text-overflow: ellipsis;
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.circle-container {
+    width: 80px;
+    padding-top: 6px;
+}
+
+.circle {
+    background: #3949ab;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%; 
+    font-family: cool;
+    font-size: 1.28em;
+    color:white;
+}
+.circle-unread{
+    background: #5f5f5f;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%; 
+    font-family: cool;
+    font-size: 1.28em;
+    color:white;
+}
+
+.coolfont {
+    font-family:cool;
+}
+
+.time {
+    font-size: 0.8em;
+    color: #a9a9a9;
+}
+
+.time-container {
+    width: 60px;
+    margin-bottom: 16px;
+}
+
+.message-details-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: white;
+    /*border-right: 1px solid #a9a9a9;*/
+}
+/*.message-details-container.ng-hide-add,.message-details-container.ng-hide-remove {
+    display: block !important;
+}*/
+
+.message-details-container.ng-hide-remove{
+    transition: all 400ms;
+    opacity: 0;
+    left:-100%;
+}
+
+.message-details-container.ng-hide-remove-active{
+    left:0; 
+    opacity: 1;
+}
+
+.message-details-container.ng-hide-add{
+    transition: all 300ms;
+    opacity:1;
+    left:0;
+}
+.message-details-container.ng-hide-add-active{
+    /*opacity:0;*/
+    left:-100%;
+}
+.open-message-header {
+    height: 70px;
+    width:100%;
+    background:#3949ab; 
+}
+
+.angle-left {
+    color: white;
+    font-size: 40px !important;
+    padding-left: 14px;
+    width:35px;
+}
+
+.list-container.ng-hide-add {
+    transition :all 300ms;
+    /*opacity:1;*/
+    top:0;
+}
+.list-container.ng-hide-add-active {
+    /*opacity:0;*/
+    top:-100%;
+}
+.list-container.ng-hide-remove {
+    transition :all 300ms;
+    /*opacity:0;*/
+    top:-100%
+        
+}
+.list-container.ng-hide-remove-active {
+    /*opacity:1;*/
+    top:0;
+}
+
+.open-message-body {
+    height: 100%;
+    width:100%;
+}
+
+.just-border-right {
+    height: 100%;
+    width:1px;
+    background: #a9a9a9;
+}
+
+.open-message-content-top {
+    width:100%;
+    min-height:116px;
+    background:white;
+}
+
+.open-header-text {
+    height: 30px;
+    font-size: 1.1em;
+    font-family: cool;
+    color: black;
+}
+
+.border-bottom {
+    height: 1px;
+    width:100%;
+    background:#a9a9a9;
+    box-shadow: 0px 1px 1px #888888;
+}
+
+.name-specific {
+    margin-top:17px;
+}
+
+.email-specific {
+    color: #717171;
+    font-style: italic;
+    font-size: 0.93em;
+}
+
+.header-content {
+    font-family: cool;
+    font-size:1.1em;
+    color:white;
+}
+
+.time-specific {
+    font-size: 0.82em;
+    font-family: cool;
+    color: #8a8888;
+    margin-bottom: 32px;
+    padding-right: 10px;
+}
+
+.content-specific {
+    padding: 27px 10px 20px 21px;
+    color: black;
+    font-size: 0.9em;
+    font-family: cool;
+    line-height: 22px;
+}
+
+.power-off {
+    padding: 16px;
+}
+
+.error-message-div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 65px;
+    width: 100%;
+    background: #3949ab;
+    color:#f08080;
+    font-family: cool;
+    font-size: 1em;
+    /*padding:0px 10px 0px 20px;*/
+}
+/*.error-message-div.ng-hide-add,.error-message-div.ng-hide-remove {
+    display: block !important;
+}*/
+.error-message-div.ng-hide-remove{
+    transition : all 300ms;
+    opacity:0;
+}
+.error-message-div.ng-hide-remove-active{
+    opacity:1;
+}
+.error-message-div.ng-hide-add{
+    transition : all 300ms;
+    opacity:1;
+}
+.error-message-div.ng-hide-add-active{
+    opacity:0;
+}
