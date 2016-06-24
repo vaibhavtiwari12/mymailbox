@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0">
+        <link rel='stylesheet' href="inbox.css">
+        <link rel='stylesheet' href="font-awesome.min.css">    
+         <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular-animate.min.js"></script>
+    </head> 
+    <body ng-app="sampleApp">
+        <div ng-controller="ProfileCtrl">
+            <div class="login-container flex justify-content flex-direction align-center" data-ng-show="displaylogin">
+                <div class="login-sub-container">
+                    <div class="input-container heading">LOGIN</div>
+                    <div class="input-container"><input class="input" type="text" placeholder="Email" data-ng-model="email"></div>
+                    <div class="input-container"><input  class="input" type="Password" placeholder="Password" data-ng-model="password"></div>
+                    <div class="input-container" data-ng-click="login()">
+                        <button class="button" type="button" >Sign In</button>
+                    </div>
+                    <!--<div class="error-message" data-ng-show="showmessage">adsasdas</div>-->
+                </div>
+                <div class="error-message-div flex justify-content" data-ng-show="showmessage"> <span>{{finalerrormessage}}</span></div>
+            </div>
+            <div data-ng-hide="displaylogin">
+                <!--<div data-ng-repeat="message in EmailContainer | orderObjectBy:'updateTime':true " >
+                    <span>{{message.from}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>{{message.name}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>{{message.content}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <span>{{message.updateTime | moment}}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="button" data-ng-click="markAsRead(message)" data-ng-show="message.updateTime!=null">mark as read</button>
+                    <span>{{message.read }}</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="button" data-ng-click="removeEmail(message)" data-ng-show="message.updateTime!=null">delete</button>
+                </div>
+                <button type="button" data-ng-click="deleteData()">sign out</button>-->
+              <!--  <div style="padding:20px;background:#eee;" ng-click="dummy = !dummy">Click</div>
+
+        <div style="padding:20px;background:#cc1d1d;color:#eee;" class="dummyClass" ng-show="dummy">
+            This is a dummy div
+        </div> -->
+                <div class="list-container" data-ng-hide="specificmessage">
+                <div class="header flex align-center">
+                    <div class="heading-left flex-100">INBOX</div>                
+                    <div class="heading-right flex-100 flex justify-content-end">
+                        <i data-ng-click="deleteData()" class="power-off fa fa-power-off" aria-hidden="true" fa-3x></i>
+                    </div>
+                </div>
+                <div>
+                    <div class="box-container flex" data-ng-repeat="message in EmailContainer | orderObjectBy:'updateTime':true"  
+                         data-ng-click="messagectrl(message);markAsRead(message)">
+                        <div class="circle-container flex justify-content flex-none">
+                            <div ng-class="{{message.read}}?'circle-unread':'circle'" class="flex justify-content align-items  align-center">{{message.name |firstCharacterUpper}}</div>
+                        </div>
+                        <div class="flex-100">
+                            <div class="message-name">{{message.name | camelCase}}</div>
+                            <div class="message-from">{{message.from}}</div>
+                            <div class="message-content">{{message.content}}</div>
+                        </div>
+                        <div class="time-container flex flex-none align-flex-end">
+                            <div class="time coolfont">{{message.updateTime | moment}}</div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="message-details-container flex flex-direction" data-ng-show="specificmessage">
+                    <div class="open-message-header flex flex-none">
+                        <div class="flex-none flex align-center">
+                            <i data-ng-click="messagectrl()" class="angle-left fa fa-angle-left" aria-hidden="true" fa-2x></i>
+                        </div>
+                        <div class="flex-100 flex align-center header-content">{{openMessage.name}} Says</div>                        
+                    </div>
+                    <div class="open-message-body flex flex-100">
+                        <div class="flex-100 flex flex-direction">
+                            <div class="flex-none flex  open-message-content-top">
+                                <div class="flex-none flex justify-content circle-container align-center">
+                                    <div class="circle flex justify-content align-items align-center">
+                                        {{openMessage.name |firstCharacterUpper}}</div>
+                                </div>
+                                <div class="flex-100 flex justify-content flex-direction">
+                                    <div class="open-header-text flex-none name-specific">{{openMessage.name | camelCase}}</div>
+                                    <div class="open-header-text flex-none email-specific">{{openMessage.from}}</div>
+                                </div>
+                                <div class="flex-none flex align-flex-end time-specific">{{openMessage.updateTime | moment}}</div>
+                            </div>
+                            <div class="flex-none border-bottom"></div>
+                            <div class="flex-100 content-specific">{{openMessage.content}}</div>
+                        </div>
+                        <div class="flex-none just-border-right"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <script src="https://www.gstatic.com/firebasejs/3.0.3/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+        <script src="moment.js"></script>
+        <script src='inbox.js'></script>
+    </body>
+</html>
